@@ -24,7 +24,7 @@ export function getUserInfo() {
 }
 
 export function getGallery() {
-    const galleryData = axios.get('/api/gallery')
+    const galleryData = axios.get('http://localhost:3005/api/gallery')
         .then(res => {
             return res.data
         })

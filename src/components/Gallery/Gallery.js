@@ -21,7 +21,7 @@ class Gallery extends Component {
         const theGallery = this.props.gallery.map((photo, i) => {
             return (
                 <div key={i}>
-                    <span>{photo.dropbox_url}</span>
+                    <span><img src={photo.dropbox_url} alt="Night Sky" height="400" width="600"/></span>
                     <span>{photo.photo_name}</span>
                 </div>
             )

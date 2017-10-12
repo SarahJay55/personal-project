@@ -77,7 +77,7 @@ passport.deserializeUser(function (id, done) {
         })
 })
 
-app.get('api/gallery', controller.getGallery);
+app.get('/api/gallery', controller.getGallery);
 app.get('/api/prints', controller.getPrints);
 
 

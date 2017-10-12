@@ -4,6 +4,7 @@ const express = require('express')
     , bodyParser = require('body-parser')
     , massive = require('massive')
     , cors = require('cors')
+    , stripe = require('stripe')(process.env.SECRET_KEY)
     , passport = require('passport')
     , Auth0Strategy = require('passport-auth0');
 
@@ -36,7 +37,7 @@ passport.use(new Auth0Strategy({
             return done(null, user[0].id)
         } else {
             const user = profile._json;
-            db.create_user([user.name, user.email, user.picture, user.identities[0].user_id])
+            db.create_user([user.name, user.email, user.identities[0].user_id])
                 .then(user => {
                     return done(null, user[0].id)
                 })
@@ -46,7 +47,7 @@ passport.use(new Auth0Strategy({
 
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/',
+    successRedirect: 'http://localhost:3000/#/prints',
     failureRedirect: '/auth'
 }))
 
@@ -68,10 +69,43 @@ passport.serializeUser(function (id, done) {
 
 passport.deserializeUser(function (id, done) {
     app.get('db').find_current_user([id])
-    .then( user => {
-        done(null, user[0])
-    })
+        .then(user => {
+            done(null, user[0])
+        })
 })
+
+app.post('/api/payment', function (req, res, next) {
+    const amountArray = req.body.amount.toString().split('');
+    const pennies = [];
+    for (var i = 0; i < amountArray.length; i++) {
+        if (amountArray[i] === ".") {
+            if (typeof amountArray[i + 1] === "string") {
+                pennies.push(amountArray[i + 1]);
+            } else {
+                pennies.push("0");
+            }
+            if (typeof amountArray[i + 2] === "string") {
+                pennies.push(amountArray[i + 2]);
+            } else {
+                pennies.push("0");
+            }
+            break;
+        } else {
+            pennies.push(amountArray[i])
+        }
+    }
+    const convertedAmt = parseInt(pennies.join(''));
+
+    const charge = stripe.charges.create({
+        amount: convertedAmt,
+        currency: 'usd',
+        source: req.body.token.id,
+        description: 'Test charge from react app'
+    }, function (err, charge) {
+        if (err) return res.sendStatus(500)
+        return res.sendStatus(200);
+    });
+});
 
 const PORT = 3005;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`))

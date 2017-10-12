@@ -1,0 +1,15 @@
+navbars {
+    background: none;
+    border: none;
+    background: transparent;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin-left: 200px;
+    padding: 0 15px;
+}

@@ -1,8 +1,8 @@
 module.exports = {
     getPrints: function(req, res, next) {
         const db = req.app.get('db');
-        const printsId = req.params.printsId
-        db.getPrints([printsId])
+        // const prints = req.params.printsId
+        db.find_prints()
         .then(prints => {
             res.status(200).send(prints);
         })

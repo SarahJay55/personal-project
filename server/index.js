@@ -6,11 +6,14 @@ const express = require('express')
     , cors = require('cors')
     , stripe = require('stripe')(process.env.SECRET_KEY)
     , passport = require('passport')
-    , Auth0Strategy = require('passport-auth0');
+    , Auth0Strategy = require('passport-auth0')
+    , controller = require('./../server/controller.js');
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
+
 app.use(session({
     secret: process.env.SECRET,
     resave: false,
@@ -73,6 +76,10 @@ passport.deserializeUser(function (id, done) {
             done(null, user[0])
         })
 })
+
+app.get('api/gallery', controller.getGallery);
+app.get('/api/prints', controller.getPrints);
+
 
 app.post('/api/payment', function (req, res, next) {
     const amountArray = req.body.amount.toString().split('');

@@ -1,7 +1,7 @@
 navbars {
     background: none;
     border: none;
-    background: transparent;
+    background-color: transparent;
 }
 
 ul {
@@ -13,3 +13,4 @@ li {
     margin-left: 200px;
     padding: 0 15px;
 }
+

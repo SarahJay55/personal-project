@@ -1,5 +1,5 @@
 .Home {
-    background-image: url('./BBPhoto.jpeg');
+    background-image: url('./DSC_1109o_preview.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -8,5 +8,7 @@
 
 h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: blue;
+    color: red;
+    position: relative;
+    top: 100px;
 }

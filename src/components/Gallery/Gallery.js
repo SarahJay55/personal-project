@@ -20,9 +20,9 @@ class Gallery extends Component {
     render() {
         const theGallery = this.props.gallery.map((photo, i) => {
             return (
-                <div key={i}>
-                    <span><img src={photo.dropbox_url} alt="Night Sky" height="400" width="600"/></span>
-                    <span>{photo.photo_name}</span>
+                <div key={i} className="row">
+                    <span className="column"><img src={photo.dropbox_url} /></span>
+                    {/* <span>{photo.photo_name}</span> */}
                 </div>
             )
         })

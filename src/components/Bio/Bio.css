@@ -7,9 +7,10 @@
     overflow: hidden;
 }
 
-.bioheader {
+.bioheader h1 {
     font-family: "Poiret One", cursive;
-    color: black;
+    color: white;
+    font-weight: lighter;
 }
 
 .bioinfo {

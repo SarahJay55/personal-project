@@ -27,7 +27,7 @@ class Gallery extends Component {
                     <ImageZoom image={{ 
                         className:"column", 
                         src: photo.dropbox_url, 
-                        alt:"photos" }} 
+                        alt:"" }} 
                         
                         /> 
                     {/* <span>{photo.photo_name}</span> */}

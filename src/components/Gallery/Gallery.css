@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poiret+One");
 
 body {
-    background-image: url('https://photos-2.dropbox.com/t/2/AAA2Ajrqxu3Hl13ToIclFc_29o3WcqI8J98bqTKNM3uTpA/12/148812236/jpeg/32x32/3/1508788800/0/2/Maple%20lake.jpg/EOCF53EYgDQgAigC/JCYu7uOlco_wxTMqQAj4yZk8kRb3yqjAuxTsBGuVeNI%2CoVb81rdKyx7EbvGYEDY-VKuM0-0gkl_yISy4D2_1s7s%2CMGKTedLSouczAeEtpogfURKPF6pjUL-qMJ7YEtX-9Eo%2CANRoQxtx-ly9ufKaGrUF245AUajSgiIRF7-Oi7P88mo%2C2CQRlZA3FRdCL38M534tLemWMdvzJ7pHDjiznOdX3aw%2CiwoiCOGAbxUVA-ZfYmF_vE3RYo4OoKg7JBwFqef7FBw%2ClWgABJXNm0AdIbBWEU2_40i2Lo8ox9CcNCKKlLCuHYE%2C3tnMPjJMimlshIUmsNXQKkHITondmLULJvpHvxyU_Uo?dl=0&size=2048x1536&size_mode=3');
+    background-image: url('https://photos-5.dropbox.com/t/2/AACGqWqUUQHJSX4kF7O6uTFMl-ERYWiGjUwI2kwGWRzvYA/12/148812236/jpeg/32x32/3/1508810400/0/2/NIK_3821.jpg/EOCF53EYgDQgAigC/gIjJ24pdkbtzLqUtjRFdls2KJtAevoq8tWAjAo6sUIE%2C-GFte3jTdrMIinCMFkZrAiobCjPX6NGm3JsPnQJ4VZw%2CfZ2vVSA3tE9Q7tKVg0PwAaOXSgSOK9jGKBIT8D8qQqQ%2C2MuNw84Skp6VAyvBZTmAUpt9uPNRd8a0T7qspjpXUU4%2C4auCREv52kxHiJ_9GYRtrdyXfDWoFias1K8Bx5aZ-CY?dl=0&size=2048x1536&size_mode=3');
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
@@ -11,6 +11,8 @@ body {
     font-family: "Poiret One", cursive;
     width: 100vw;
     margin-bottom: 120px;
+    color: white;
+    font-weight: lighter;
 }
 
 .gallerygrid {
@@ -28,7 +30,6 @@ body {
 
 .column:hover {
     opacity: 0.8;
-    transition: .3s transform;
 }
 
 @media (max-width: 800px) {

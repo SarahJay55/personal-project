@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Gallery.css';
 import { getGallery } from './../../ducks/reducer.js';
 import { connect } from 'react-redux';
+import ImageZoom from 'react-medium-image-zoom'
 
 class Gallery extends Component {
     constructor(props) {
@@ -19,16 +20,24 @@ class Gallery extends Component {
 
     render() {
         const theGallery = this.props.gallery.map((photo, i) => {
-            return (
-                <div key={i} className="row">
-                    <span className="column"><img src={photo.dropbox_url} /></span>
+           
+            return (      
+                <div key={i} className="gallerygrid">
+                    {/* <span>whatever</span> */}
+                    <ImageZoom image={{ 
+                        className:"column", 
+                        src: photo.dropbox_url, 
+                        alt:"photos" }} 
+                        
+                        /> 
                     {/* <span>{photo.photo_name}</span> */}
+                    
                 </div>
             )
         })
         return (
-            <div>
-                <h1>Gallery</h1>
+            <div className="test">
+                <h1 className="galleryheader">Gallery</h1>
                 {theGallery}
             </div>
         )

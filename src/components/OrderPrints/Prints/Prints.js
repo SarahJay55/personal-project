@@ -22,7 +22,7 @@ class Prints extends Component {
 
     onToken = (token) => {
         token.card = void 0;
-        axios.post('http://localhost:3000/api/payment', { token, amount: 100} )
+        axios.post('http://localhost:3000/api/payment', { token, amount: 100 })
             .then(response => {
                 alert("Payment Received")
             })
@@ -30,28 +30,28 @@ class Prints extends Component {
     render() {
         const tableOfPrints = this.props.prints.map((print, i) => {
             return (
-                <div key={i}>
-                    <img src={print.print_url} alt='mountainview' height='400px' width='600px' />
+                <div key={i} className="prints">
+                    <img src={print.print_url} alt='photos' height='400px' width='600px' />
                     <span>{print.print_name}</span>
                     <span>{print.price}</span>
-                    </div>
+                </div>
             )
         })
         return (
             <div>
-            <div>
-                <h1>Prints page</h1>
-                <a href='http://localhost:3005/auth'><button>Log In</button></a>
-                <a href='http://localhost:3005/auth/logout'><button>Log Out</button></a>
-            </div>
-            <StripeCheckout
-                token={this.onToken}
-                stripeKey={pub_key}
-                amount={1000}
-            />
-            <div>
-                {tableOfPrints}
-            </div>
+                <div>
+                    <h1 className="printsheader">Prints page</h1>
+                    <a href='http://localhost:3005/auth/logout' className="loginbuttons"><button>Log Out</button></a>
+                    <a href='http://localhost:3005/auth' className="loginbuttons"><button>Log In</button></a>
+                </div>                
+                <StripeCheckout className="paybutton"
+                    token={this.onToken}
+                    stripeKey={pub_key}
+                    amount={1000}
+                />
+                <div>
+                    {tableOfPrints}
+                </div>
             </div>
         )
     }

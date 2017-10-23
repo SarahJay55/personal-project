@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+
+.bio {
+    background-image: url("https://photos-6.dropbox.com/t/2/AADbKvQGINg1aVywezHt1gmIDeZaGG__ea61c1lsujl5rQ/12/148812236/jpeg/32x32/3/1508796000/0/2/DSC_4558.jpg/EOCF53EYgDQgAigC/Fxn8Pxf4ldh0E-HYpah5QFUbKHoqTCoNoqsgH5se5qc%2CyLQooCdG0Gp0HtM40-tJJ5VWv_G9PRZDAeBi-bl7CDM%2C5ZyZUfKC6Ztk0St_O9mqC3C8Smu5GrUwdeKFUswwW0Y%2CNqq-YaQgLJBshOzoynrVy9kzGdnLvrg8XSt34ql_QnI%2ChsjAcfZSPFOxcyMgy_uBsA7ZoQLHr2n4gcj_hHA6JLg%2Cpn9yVaeaIObp2etCd9VWXCqvpUZM8wYpt-luSNy1MOw%2C1YoB0uaD26Qk3mtOOsIuJPs-YK4znsCkVbx8XnQ3lIQ?dl=0&size=2048x1536&size_mode=3");
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bioheader {
+    font-family: "Poiret One", cursive;
+    color: black;
+}
+
+.bioinfo {
+    font-family: "Poiret One", cursive;
+    height: 100vh;
+    width: 100%;
+    margin: 140px;
+    margin-left: 30px;
+    color: black;
+    width: 95vw;
+    font-size: 23px;
+    font-weight: bolder;
+}
+
+.bioimg {
+    border-radius: 25px;
+}

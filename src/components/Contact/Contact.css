@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=Poiret+One");
+
+
+.contactpage {
+    background-image: url('https://photos-6.dropbox.com/t/2/AAC_NzUCQ5qIN3UjKRFG1jt7ZsVSQGUU29yuHYHH6dSQEQ/12/148812236/jpeg/32x32/3/1508194800/0/2/DSC_4382.jpg/EOCF53EY0DMgAigC/lOE1OdVC1atHITASYZPR_NBwLm-jcj93D0CvQV7OoOg%2Ct0ApqkTuCL1BXQyf7lzqRqQ27qsPpP83NqWje04F1Nc%2CNibO7KqHm5iS8J-qNLlAWgc8ukPj4WNeNz8dlQtXmkU%2CmgrZ2paag0Vv4yvVZaeKNSd33jDhJaqf7zikE3toLBU%2Cajyl35gXMPt81x-19GdQ-mgVXH1TfNMuZLyW0uvHWao%2CsGf5AsseahROZxGnpbm0004bqH8Wa0_4T12yDUz8urk?dl=0&size=2048x1536&size_mode=3');
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.contactheader {
+    font-family: "Poiret One", cursive;
+    color: black;
+}
+
+.contactinfo {
+    font-family: "Poiret One", cursive;
+    height: 100vh;
+    width: 100%;
+    margin: 170px;
+    margin-left: 30px;
+    color: black;
+    width: 95vw;
+    font-size: 23px;
+    font-weight: bolder;
+}
+
+.instagram {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    
+}
+
+.email {
+    font-size: 30px;
+}
+
+h3 {
+    position: relative;
+    top: 120px;
+}
+
+.imginsta {
+    opacity: 0.6;
+}
+
+.imginsta:hover {
+    opacity: 1;
+    transition: all 1.5s;    
+    transform: rotate(360deg) scale(1.2, 1.2);
+}

@@ -26,7 +26,6 @@ class App extends Component {
         <Route component={ Contact } path='/contact' />
         
       </div>
-      {/* <ShoppingCart /> */}
       </HashRouter>
       
     );

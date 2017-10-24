@@ -79,6 +79,7 @@ passport.deserializeUser(function (id, done) {
 
 app.get('/api/gallery', controller.getGallery);
 app.get('/api/prints', controller.getPrints);
+app.get('/api/details/:printid', controller.getDetails);
 
 // app.get('/api/prints/cart', controller.getCart);
 // app.post('/api/prints/cart', controller.addItem);

@@ -1,30 +1,46 @@
 @import url("https://fonts.googleapis.com/css?family=Poiret+One");
-
-.bio {
-    background-image: url("https://photos-6.dropbox.com/t/2/AADbKvQGINg1aVywezHt1gmIDeZaGG__ea61c1lsujl5rQ/12/148812236/jpeg/32x32/3/1508796000/0/2/DSC_4558.jpg/EOCF53EYgDQgAigC/Fxn8Pxf4ldh0E-HYpah5QFUbKHoqTCoNoqsgH5se5qc%2CyLQooCdG0Gp0HtM40-tJJ5VWv_G9PRZDAeBi-bl7CDM%2C5ZyZUfKC6Ztk0St_O9mqC3C8Smu5GrUwdeKFUswwW0Y%2CNqq-YaQgLJBshOzoynrVy9kzGdnLvrg8XSt34ql_QnI%2ChsjAcfZSPFOxcyMgy_uBsA7ZoQLHr2n4gcj_hHA6JLg%2Cpn9yVaeaIObp2etCd9VWXCqvpUZM8wYpt-luSNy1MOw%2C1YoB0uaD26Qk3mtOOsIuJPs-YK4znsCkVbx8XnQ3lIQ?dl=0&size=2048x1536&size_mode=3");
-    background-size: cover;
-    height: 100vh;
-    overflow: hidden;
-}
-
 .bioheader h1 {
-    font-family: "Poiret One", cursive;
-    color: white;
-    font-weight: lighter;
-}
+  font-family: "Poiret One", cursive; }
 
 .bioinfo {
-    font-family: "Poiret One", cursive;
-    height: 100vh;
-    width: 100%;
-    margin: 140px;
-    margin-left: 30px;
-    color: black;
-    width: 95vw;
-    font-size: 23px;
-    font-weight: bolder;
-}
+  font-family: "Poiret One", cursive; }
+
+.bio {
+  background-image: url("https://photos-5.dropbox.com/t/2/AABXmzmrIayTfzuZp1APzPenDsIn_AJSFTI9KC8xseQYLQ/12/148812236/jpeg/32x32/3/1508889600/0/2/DSC_4818.jpg/EOCF53EYgDQgAigC/k5JD4e9zMiUMbA1EzpWnhHpKjOP9c3aBam-FVWuIqNA%2CziIm22xuH7qo8zm-IErDq88x1P0hZ0Jb6A6azLEBuN4%2Cs2NbLl_0gJHiapKuyZ8Klw8dCZNjKo0RLS_fDITS-6A%2C6-5fbzuPyd-xB19AMeiQm6qamFEIEIEvHI--caXrgNY%2CCRhFgtO-rXwjesfJlpAfzMBM20C7G9DYIfkERj1FuCQ%2CHMrpFR0Z0PCLCVK-A0t8_6Pn3o7q-tCKsQ_e_zhQ2yQ%2CfmXQzteBc2VlZZEwFLYXXkbv5KQyPup75j2QxiwVAPs?dl=0&size=2048x1536&size_mode=3");
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden; }
+
+.bioheader h1 {
+  color: white;
+  font-weight: lighter; }
+
+.bioinfo {
+  height: 100vh;
+  width: 100%;
+  margin: 140px;
+  margin-left: 30px;
+  color: white;
+  width: 95vw;
+  font-size: 23px;
+  font-weight: bolder; }
 
 .bioimg {
-    border-radius: 25px;
-}
+  border-radius: 25px;
+  margin-right: 20px; }
+
+@media (max-width: 600px) {
+  .bioimg {
+    width: 90%;
+    height: 200px; } }
+
+@media (max-width: 1000px) {
+  .bio {
+    overflow: scroll; } }
+
+@media (max-width: 800px) {
+  .bio {
+    overflow: scroll;
+    background-size: cover; }
+  .bioinfo {
+    width: 90%; } }

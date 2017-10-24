@@ -7,8 +7,8 @@ import Gallery from './components/Gallery/Gallery.js';
 import Home from './components/Home/Home.js';
 import NavBar from './components/NavBar/NavBar.js';
 import Prints from './components/OrderPrints/Prints/Prints.js';
-// import ShoppingCart from './components/OrderPrints/ShoppingCart/ShoppingCart.js';
-// import Details from './components/OrderPrints/Details/Details.js';
+import Cart from './components/OrderPrints/Cart/Cart.js';
+import Details from './components/OrderPrints/Details/Details.js';
 // import Shop from './components/OrderPrints/Shop/Shop.js';
 
 
@@ -24,7 +24,8 @@ class App extends Component {
         <Route component={ Prints } path='/prints' />
         <Route component={ Bio } path='/bio' />
         <Route component={ Contact } path='/contact' />
-        
+        <Route component={ Details } path='/orderprints/details/:printid' />
+        <Route component={ Cart } path='/orderprints/cart' />        
       </div>
       </HashRouter>
       

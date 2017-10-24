@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Gallery.css';
 import { getGallery } from './../../ducks/reducer.js';
 import { connect } from 'react-redux';
-import ImageZoom from 'react-medium-image-zoom'
+import ImageZoom from 'react-medium-image-zoom';
 
 class Gallery extends Component {
     constructor(props) {

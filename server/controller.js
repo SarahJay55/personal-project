@@ -25,6 +25,14 @@ module.exports = {
         })
     },
 
+    getDetails: function(req, res, next) {
+        const db = req.app.get('db');
+        db.details([req.params.printid])
+        .then(details => {
+            res.status(200).send(details[0]);
+        })
+    }
+
     // getCart: function(req, res) {
     //     const { items } = req.body;
     //     const item = { id, size, type, quantity }

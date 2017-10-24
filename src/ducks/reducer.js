@@ -5,14 +5,16 @@ const initialState = {
     gallery: [],
     cart: [],
     prints: [],
-    shoppingCart: []
+    print: {}
 }
 
 const GET_USER_INFO = "GET_USER_INFO";
 const GET_GALLERY = "GET_GALLERY";
 const GET_PRINTS = "GET_PRINTS";
+const SET_ONE_PRINT_ON_REDUX = "SET_ONE_PRINT_ON_REDUX";
+const ADD_PRINT_TO_CART = "ADD_PRINT_TO_CART";
 const GET_CART = "GET_CART";
-const ADD_TO_CART = "ADD_TO_CART";
+
 const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
 
@@ -50,6 +52,24 @@ export function getPrints() {
     }
 }
 
+export function setOnePrintOnRedux(val) {
+    const printInfo = axios.get(`http://localhost:3005/api/details/${val}`)
+        .then(res => {
+            return res.data
+        })
+    return {
+        type: SET_ONE_PRINT_ON_REDUX,
+        payload: printInfo
+    }
+}
+
+export function addPrintToCart(val) {
+    return {
+        type: ADD_PRINT_TO_CART,
+        payload: val
+    }
+}
+
 export function getCart() {
     const cartData = axios.get('/api/cart')
         .then(res => {
@@ -61,12 +81,7 @@ export function getCart() {
     }
 }
 
-export function addToCart(product) {
-    return {
-        type: ADD_TO_CART,
-        payload: product
-    }
-}
+
 
 export function removeFromCart(productIndex) {
     return {
@@ -83,14 +98,20 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { gallery: action.payload })
         case GET_PRINTS + '_FULFILLED':
             return Object.assign({}, state, { prints: action.payload })
+        case SET_ONE_PRINT_ON_REDUX + '_FULFILLED':
+            return Object.assign({}, state, { print: action.payload })
+        case ADD_PRINT_TO_CART:
+            const newCart = state.cart.slice();
+            newCart.push(action.payload);
+            return Object.assign({}, state, { cart: newCart })
         case GET_CART + '_FULFILLED':
             return Object.assign({}, state, { cart: action.payload })
-        case ADD_TO_CART + '_FULFILLED':
-            return Object.assign({}, state, {shoppingCart: [...state.shoppingCart, action.payload]});
+        // case ADD_TO_CART + '_FULFILLED':
+        //     return Object.assign({}, state, {shoppingCart: [...state.shoppingCart, action.payload]});
         case REMOVE_FROM_CART + '_FULFILLED':
-            let newArray = state.shoppingCart.slice();
+            let newArray = state.cart.slice();
             newArray.splice(action.index, 1);
-            return Object.assign({}, {shoppingCart: newArray});
+            return Object.assign({}, { cart: newArray });
 
         default:
             return state;

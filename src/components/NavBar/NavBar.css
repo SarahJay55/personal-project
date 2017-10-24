@@ -1,68 +1,58 @@
 @import url("https://fonts.googleapis.com/css?family=Poiret+One");
+div {
+  font-family: "Poiret One", cursive; }
 
 .navbars {
-    background: none;
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    top:0;
-    margin-top: 10px;
-    color: white;  
-}
+  background: none;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  margin-top: 10px;
+  color: white; }
 
 .navbars:before {
-    content: ' ';
-    display: block;
-    border-bottom: 2px solid white;
-    width: 95vw;
-    margin-top: 10px;
-    margin-left: 15px;
-    margin-right: 10px; 
-}
+  content: ' ';
+  display: block;
+  border-bottom: 2px solid white;
+  width: 95vw;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 10px; }
 
 .navbars:after {
-    content: ' ';
-    display: block;
-    border-bottom: 2px solid white;
-    width: 95vw;
-    margin-top: 75px;
-    margin-left: 15px;
-    margin-right: 10px;
-}
+  content: ' ';
+  display: block;
+  border-bottom: 2px solid white;
+  width: 95vw;
+  margin-top: 75px;
+  margin-left: 15px;
+  margin-right: 10px; }
 
 .logo {
-    float: left;
-    font-weight: bolder;
-}
-
+  float: left;
+  font-weight: bolder; }
 
 /* .navbarslogo {
     float: left;
     margin: 30px;
 } */
-
 .active {
-    float: right;
-    display: block;
-    justify-content: flex-end;
-    color: white;
-    text-align: center;
-    padding: 25px 30px;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: lighter;
-    font-family: "Poiret One", cursive; 
-} 
+  float: right;
+  display: block;
+  justify-content: flex-end;
+  color: white;
+  text-align: center;
+  padding: 25px 30px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: lighter; }
 
 .navbars a:hover {
-    color: black;
-}
+  color: black; }
 
 /* @media (max-width: 600px) {
     .active {
         
     }
 } */
-
-
-

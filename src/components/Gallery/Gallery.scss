@@ -1,0 +1,47 @@
+@import './../../variables.scss';
+
+.galleryheader {
+    font-family: $displayFont;
+}
+body {
+    background-image: url('https://photos-5.dropbox.com/t/2/AACGqWqUUQHJSX4kF7O6uTFMl-ERYWiGjUwI2kwGWRzvYA/12/148812236/jpeg/32x32/3/1508810400/0/2/NIK_3821.jpg/EOCF53EYgDQgAigC/gIjJ24pdkbtzLqUtjRFdls2KJtAevoq8tWAjAo6sUIE%2C-GFte3jTdrMIinCMFkZrAiobCjPX6NGm3JsPnQJ4VZw%2CfZ2vVSA3tE9Q7tKVg0PwAaOXSgSOK9jGKBIT8D8qQqQ%2C2MuNw84Skp6VAyvBZTmAUpt9uPNRd8a0T7qspjpXUU4%2C4auCREv52kxHiJ_9GYRtrdyXfDWoFias1K8Bx5aZ-CY?dl=0&size=2048x1536&size_mode=3');
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.galleryheader {
+    width: 100vw;
+    margin-bottom: 120px;
+    color: white;
+    font-weight: lighter;
+}
+
+.gallerygrid {
+    display: inline-block;
+    height: 20%;
+    width: 25%;
+}
+
+.column {
+    width: 100%;
+    padding: 5px;
+    margin-top: 50px;
+    outline: none;
+}
+
+.column:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 800px) {
+    .gallerygrid {
+        width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallerygrid {
+        width: 100%;
+    }
+}

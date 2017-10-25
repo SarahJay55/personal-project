@@ -31,8 +31,10 @@
 
 @media (max-width: 600px) {
   .bioimg {
-    width: 90%;
-    height: 200px; } }
+    margin-left: 28px;
+    width: 80%;
+    height: 200px;
+    display: block; } }
 
 @media (max-width: 1000px) {
   .bio {

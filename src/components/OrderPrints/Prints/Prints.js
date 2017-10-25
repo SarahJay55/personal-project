@@ -66,7 +66,7 @@ class Prints extends Component {
             <div>
                 <div>
                     <h1 className="printsheader">Prints page</h1>
-                    <p className="printsubtitle">All prints come in 16x20 on a Matte finish.  If you would like a different size or would like it on a canvas material, please contact me via email.  My email information is located on the Contact Page. Thank you!</p>
+                    <p className="printsubtitle">All prints come in a 16x20 size with a Matte finish.  If you would like a different size or would like it on a canvas material, please contact me via email.  My email information is located on the Contact Page. Thank you!</p>
                     <Cart className='cartview' />
 
                     {/* <button className="cart__checkout" onClick={ checkout }>Checkout</button> */}

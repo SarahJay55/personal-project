@@ -62,8 +62,19 @@ div {
     color: black;
 }
 
-/* @media (max-width: 600px) {
-    .active {
-        
+@media (max-width: 600px) {
+    .navbars {
+        position: absolute;
     }
-} */
+}
+
+@media (max-width: 600px) {
+    .active {
+        margin-left: 80px;
+        font-size: 12px;
+        padding: 5px;
+    }
+    .active:hover {
+        color: white;
+    }
+}

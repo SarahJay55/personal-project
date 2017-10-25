@@ -22,12 +22,15 @@ h1 {
 
 .imghome:hover {
     opacity: 0.9;
-    transition: 3s;
+    transition: 1.5s;
 }
 
 @media (max-width: 600px) {
     .imghome {
-        width: 40%;
-        left: 35%;
+        width: 35%;
+        left: 33%;
+    }
+    .imghome {
+        opacity: 0.9;
     }
 }

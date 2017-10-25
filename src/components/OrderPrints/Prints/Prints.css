@@ -39,15 +39,26 @@ body {
   margin-left: 50px; }
 
 .prints span {
-  color: white; }
+  color: white;
+  font-size: 20px; }
+
+.cartview {
+  width: 40%;
+  float: right;
+  margin-top: 50px;
+  padding: 5px; }
+
+.addToCart {
+  color: white;
+  font-weight: bolder;
+  font-size: 18px; }
 
 @media (max-width: 600px) {
   .prints {
     width: 100%; } }
 
-.cartview {
-  border: 1px solid blue;
-  width: 25%;
-  float: right;
-  margin-top: 50px;
-  padding: 5px; }
+@media (max-width: 600px) {
+  .printsubtitle {
+    font-size: 20px;
+    width: 100%;
+    margin-left: 0px; } }

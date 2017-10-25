@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import { Provider } from 'react-redux';
 // import { createStore, combineReducers } from 'redux';
-import StripeCheckout from 'react-stripe-checkout';
-import pub_key from './stripeKey.js';
+// import StripeCheckout from 'react-stripe-checkout';
+// import pub_key from './stripeKey.js';
 import './Prints.css';
 import Cart from './../Cart/Cart.js'
 import axios from 'axios';
@@ -68,16 +68,17 @@ class Prints extends Component {
                     <h1 className="printsheader">Prints page</h1>
                     <p className="printsubtitle">All prints come in 16x20 on a Matte finish.  If you would like a different size or would like it on a canvas material, please contact me via email.  My email information is located on the Contact Page. Thank you!</p>
                     <Cart className='cartview' />
-                    <button className="cart__checkout" onClick={ checkout }>Checkout</button>
+
+                    {/* <button className="cart__checkout" onClick={ checkout }>Checkout</button> */}
                 </div>
                 <div>
-                <a href='http://localhost:3005/auth/logout' className="loginbuttons"><button>Log Out</button></a>
-                <a href='http://localhost:3005/auth' className="loginbuttons"><button>Log In</button></a>
-                <StripeCheckout className="paybutton"
+                {/* <a href='http://localhost:3005/auth/logout' className="loginbuttons"><button>Log Out</button></a>
+                <a href='http://localhost:3005/auth' className="loginbuttons"><button>Log In</button></a> */}
+                {/* <StripeCheckout className="paybutton"
                     token={this.onToken}
                     stripeKey={pub_key}
-                    amount={10000}
-                />
+                    amount={5555}
+                /> */}
                 </div>
                 <div>
                     {tableOfPrints}

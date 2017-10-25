@@ -41,8 +41,15 @@
      flex-direction: column;
      float: right;
     margin-right: 30px;
-    width: 225px;
+    width: 400px;
     height: 250px;
+   }
+
+   .carttotal {
+     font-size: 20px;
+     color: white;
+     background-color: seagreen;
+     padding: 20px;
    }
 
   .addToCart {
@@ -80,4 +87,15 @@
   .itemInCart * {
     margin-left: 30px;
     margin-right: 30px;
+  }
+
+  .paybutton {
+    margin-top: 5px;
+    margin-left: 50px;
+
+  }
+
+  .login {
+    display: flex;
+    justify-content: center;
   }

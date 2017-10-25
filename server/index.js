@@ -92,13 +92,13 @@ app.post('/api/payment', function (req, res, next) {
     const pennies = [];
     for (var i = 0; i < amountArray.length; i++) {
         if (amountArray[i] === ".") {
-            if (typeof amountArray[i + 1] === "string") {
-                pennies.push(amountArray[i + 1]);
+            if (typeof amountArray[i + 100] === "string") {
+                pennies.push(amountArray[i + 100]);
             } else {
                 pennies.push("0");
             }
-            if (typeof amountArray[i + 2] === "string") {
-                pennies.push(amountArray[i + 2]);
+            if (typeof amountArray[i + 200] === "string") {
+                pennies.push(amountArray[i + 200]);
             } else {
                 pennies.push("0");
             }

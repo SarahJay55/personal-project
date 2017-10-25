@@ -14,6 +14,7 @@ const GET_PRINTS = "GET_PRINTS";
 const SET_ONE_PRINT_ON_REDUX = "SET_ONE_PRINT_ON_REDUX";
 const ADD_PRINT_TO_CART = "ADD_PRINT_TO_CART";
 const GET_CART = "GET_CART";
+const CHECKOUT = "CHECKOUT";
 
 const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
@@ -81,6 +82,10 @@ export function getCart() {
     }
 }
 
+export function checkout() {
+    return { type: CHECKOUT };
+}
+
 
 
 export function removeFromCart(productIndex) {
@@ -112,6 +117,8 @@ export default function reducer(state = initialState, action) {
             let newArray = state.cart.slice();
             newArray.splice(action.index, 1);
             return Object.assign({}, { cart: newArray });
+        case CHECKOUT + '_FULFILLED':
+            return initialState;
 
         default:
             return state;

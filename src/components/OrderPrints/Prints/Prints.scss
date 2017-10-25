@@ -4,6 +4,10 @@
     font-family: $displayFont;
 }
 
+.prints span {
+    font-family: $displayFont;
+}
+
 body {
     background-image: url('https://photos-5.dropbox.com/t/2/AACGqWqUUQHJSX4kF7O6uTFMl-ERYWiGjUwI2kwGWRzvYA/12/148812236/jpeg/32x32/3/1508810400/0/2/NIK_3821.jpg/EOCF53EYgDQgAigC/gIjJ24pdkbtzLqUtjRFdls2KJtAevoq8tWAjAo6sUIE%2C-GFte3jTdrMIinCMFkZrAiobCjPX6NGm3JsPnQJ4VZw%2CfZ2vVSA3tE9Q7tKVg0PwAaOXSgSOK9jGKBIT8D8qQqQ%2C2MuNw84Skp6VAyvBZTmAUpt9uPNRd8a0T7qspjpXUU4%2C4auCREv52kxHiJ_9GYRtrdyXfDWoFias1K8Bx5aZ-CY?dl=0&size=2048x1536&size_mode=3');
     background-size: cover;
@@ -12,33 +16,54 @@ body {
 }
 
 .printsheader {
-    // font-family: "Poiret One", cursive;
     color: white;
     font-weight: lighter;
+    margin-bottom: 120px;
+}
+
+.printsubtitle {
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    width: 50%;
+    margin-left: 100px;
+    padding: 30px;
 }
 
 .prints {
-    margin-top: 100px;
-    display: table;
-    position: relative;
-    width: 25%;
-    padding: 10px;
+    margin-top: 30px;
+    // position: relative;
     float: left; 
+    // display: inline-block;
+    width: 60%;
 }
 
-.prints > img {
-    display: inline-block;
-    width: 600px;
-    display: flex;
-    justify-content: row;
-    margin-top: 50px;
+.prints img {
+    width: 60%;
+    height: 60%;
+    margin-top: 0px;
+    padding: 10px;
+    outline: none;
+    float: left;
+    margin-left: 50px;
+}
 
+.prints span {
+    color: white;
 }
 
 @media (max-width: 600px) {
     .prints {
         width: 100%;
     }
+}
+
+.cartview {
+    border: 1px solid blue;
+    width: 25%;
+    float: right;
+    margin-top: 50px;
+    padding: 5px;
 }
 
 .login {

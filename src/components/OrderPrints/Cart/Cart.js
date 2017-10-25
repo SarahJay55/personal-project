@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Cart.css';
+import { checkout } from './../../../ducks/reducer.js';
 // import { removeFromCart } from './../../../ducks/reducer.js';
 // import { addToCart } from './../../../ducks/reducer.js';
 
@@ -16,7 +17,7 @@ class Cart extends Component {
             <div className="itemInCart" key={i}> 
               <img alt='photos' src={item.print_url} />
               <p>{item.print_name}</p>
-              <p>${item.price}</p>
+              <p>Price - ${item.price}</p>
             </div>
           )
         })}

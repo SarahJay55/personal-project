@@ -4,11 +4,15 @@ import React, { Component } from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import pub_key from './stripeKey.js';
 import './Prints.css';
+import Cart from './../Cart/Cart.js'
 import axios from 'axios';
 import { getPrints } from './../../../ducks/reducer.js';
 import { connect } from 'react-redux';
-// import ImageZoom from 'react-medium-image-zoom';
-import { Link } from 'react-router-dom';
+import ImageZoom from 'react-medium-image-zoom';
+import { checkout } from './../../../ducks/reducer.js';
+// import { Link } from 'react-router-dom';
+import { setOnePrintOnRedux, addPrintToCart } from './../../../ducks/reducer.js';
+
 
 
 class Prints extends Component {
@@ -24,6 +28,14 @@ class Prints extends Component {
         this.props.getPrints();
     }
 
+    addToCart(print) {
+        this.props.addPrintToCart(print);
+    }
+
+    // checkoutAndRedirect() {
+	// 	checkout();
+	// }
+
 
     onToken = (token) => {
         token.card = void 0;
@@ -36,16 +48,17 @@ class Prints extends Component {
         const tableOfPrints = this.props.prints.map((print, i) => {
             return (
                 <div key={i} className="prints">
-                    <Link to={`/orderprints/details/${print.id}`} >
-                        {/* <ImageZoom image={{
-                            className: '',
-                            src: print.print_url,
-                            alt: ''
-                        }} /> */}
-                        <img src={print.print_url} alt='photos' height='400px' width='600px' />
-                        <span>{print.print_name}</span>
-                        <span>{print.price}</span>
-                    </Link>
+                    {/* <Link to={`/orderprints/details/${print.id}`} > */}
+                    <ImageZoom image={{
+                        className: '',
+                        src: print.print_url,
+                        alt: ''
+                    }} />
+                    {/* <img src={print.print_url} alt='photos' height='400px' width='600px' /> */}
+                    <span>{print.print_name}</span><br></br>
+                    <span>Price is ${print.price}</span>
+                    <div className="addToCart" onClick={() => this.addToCart(print)}>Add To Cart</div>
+                    {/* </Link> */}
                 </div>
             )
         })
@@ -53,14 +66,19 @@ class Prints extends Component {
             <div>
                 <div>
                     <h1 className="printsheader">Prints page</h1>
-                    <a href='http://localhost:3005/auth/logout' className="loginbuttons"><button>Log Out</button></a>
-                    <a href='http://localhost:3005/auth' className="loginbuttons"><button>Log In</button></a>
+                    <p className="printsubtitle">All prints come in 16x20 on a Matte finish.  If you would like a different size or would like it on a canvas material, please contact me via email.  My email information is located on the Contact Page. Thank you!</p>
+                    <Cart className='cartview' />
+                    <button className="cart__checkout" onClick={ checkout }>Checkout</button>
                 </div>
+                <div>
+                <a href='http://localhost:3005/auth/logout' className="loginbuttons"><button>Log Out</button></a>
+                <a href='http://localhost:3005/auth' className="loginbuttons"><button>Log In</button></a>
                 <StripeCheckout className="paybutton"
                     token={this.onToken}
                     stripeKey={pub_key}
-                    amount={1000}
+                    amount={10000}
                 />
+                </div>
                 <div>
                     {tableOfPrints}
                 </div>
@@ -75,4 +93,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { getPrints })(Prints);
+export default connect(mapStateToProps, { getPrints, addPrintToCart, setOnePrintOnRedux })(Prints);

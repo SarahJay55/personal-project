@@ -20,18 +20,15 @@ class Gallery extends Component {
 
     render() {
         const theGallery = this.props.gallery.map((photo, i) => {
-           
-            return (      
+
+            return (
                 <div key={i} className="gallerygrid">
-                    {/* <span>whatever</span> */}
-                    <ImageZoom image={{ 
-                        className:"column", 
-                        src: photo.dropbox_url, 
-                        alt:"" }} 
-                        
-                        /> 
-                    {/* <span>{photo.photo_name}</span> */}
-                    
+                    <ImageZoom image={{
+                        className: "column",
+                        src: photo.dropbox_url,
+                        alt: ""
+                    }}
+                    />
                 </div>
             )
         })

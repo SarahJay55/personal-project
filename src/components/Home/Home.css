@@ -27,8 +27,8 @@ h1 {
 
 @media (max-width: 600px) {
     .imghome {
-        width: 35%;
-        left: 33%;
+        width: 40%;
+        left: 30%;
     }
     .imghome {
         opacity: 0.9;

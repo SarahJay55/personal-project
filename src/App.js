@@ -9,8 +9,6 @@ import NavBar from './components/NavBar/NavBar.js';
 import Prints from './components/OrderPrints/Prints/Prints.js';
 import Cart from './components/OrderPrints/Cart/Cart.js';
 import Details from './components/OrderPrints/Details/Details.js';
-// import Shop from './components/OrderPrints/Shop/Shop.js';
-
 
 
 class App extends Component {

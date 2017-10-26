@@ -65,7 +65,7 @@ class Prints extends Component {
         return (
             <div>
                 <div>
-                    <h1 className="printsheader">Prints page</h1>
+                    <h1 className="printsheader">Prints</h1>
                     <p className="printsubtitle">All prints come in a 16x20 size with a Matte finish.  If you would like a different size or would like it on a canvas material, please contact me via email.  My email information is located on the Contact Page. Thank you!</p>
                     <Cart className='cartview' />
 

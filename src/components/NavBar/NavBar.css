@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poiret+One");
 div {
-  font-family: "Poiret One", cursive; }
+  font-family: "Poiret One", cursive;
+  color: white; }
 
 .navbars {
   background: none;
@@ -8,8 +9,7 @@ div {
   background-color: transparent;
   position: absolute;
   top: 0;
-  margin-top: 10px;
-  color: white; }
+  margin-top: 10px; }
 
 .navbars:before {
   content: ' ';
@@ -57,8 +57,13 @@ div {
 
 @media (max-width: 600px) {
   .active {
-    margin-left: 80px;
-    font-size: 12px;
-    padding: 5px; }
-  .active:hover {
-    color: white; } }
+    margin-left: 5px;
+    font-size: 13px;
+    padding: 5px;
+    float: right;
+    margin-top: 10px; }
+  .navbars a:hover {
+    color: white; }
+  .logo {
+    margin-top: 15px;
+    margin-left: 7px; } }

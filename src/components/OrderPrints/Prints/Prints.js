@@ -37,13 +37,14 @@ class Prints extends Component {
 	// }
 
 
-    onToken = (token) => {
-        token.card = void 0;
-        axios.post('http://localhost:3000/api/payment', { token, amount: 100 })
-            .then(response => {
-                alert("Payment Received")
-            })
-    }
+    // onToken = (token) => {
+    //     console.log(token)
+    //     token.card = void 0;
+    //     axios.post('http://localhost:3000/api/payment', { token, amount: 100 })
+    //         .then(response => {
+    //             alert("Payment Received")
+    //         })
+    // }
     render() {
         const tableOfPrints = this.props.prints.map((print, i) => {
             return (

@@ -1,8 +1,5 @@
-CREATE TABLE orders (
-    id SERIAL PRIMARY KEY,
-    username_id INTEGER,
-    prints_id INTEGER,
-    size TEXT,
-    print_type TEXT,
-    quantity INTEGER
-)
+create table orders (
+    id serial primary key,
+    prints_id integer references prints (id),
+    email varchar(100)
+    )

@@ -86,8 +86,6 @@ export function checkout() {
     return { type: CHECKOUT };
 }
 
-
-
 export function removeFromCart(productIndex) {
     return {
         type: REMOVE_FROM_CART,
@@ -111,14 +109,12 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { cart: newCart })
         case GET_CART + '_FULFILLED':
             return Object.assign({}, state, { cart: action.payload })
-        // case ADD_TO_CART + '_FULFILLED':
-        //     return Object.assign({}, state, {shoppingCart: [...state.shoppingCart, action.payload]});
         case REMOVE_FROM_CART + '_FULFILLED':
             let newArray = state.cart.slice();
             newArray.splice(action.index, 1);
             return Object.assign({}, { cart: newArray });
-        case CHECKOUT + '_FULFILLED':
-            return initialState;
+        case CHECKOUT:
+            return Object.assign(initialState);
 
         default:
             return state;

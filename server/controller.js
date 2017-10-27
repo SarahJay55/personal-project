@@ -30,28 +30,16 @@ module.exports = {
         .then(details => {
             res.status(200).send(details[0]);
         })
+    },
+
+    makeOrder: function(req, res, next) {
+        const db = req.app.get('db');
+        req.body.cart.forEach((item) => {
+            db.post_order([item.id, req.body.email])
+            .then(order => {
+                res.status(200).send(order)
+            })
+        }) 
+       
     }
-
-    // getCart: function(req, res) {
-    //     const { items } = req.body;
-    //     const item = { id, size, type, quantity }
-    //     res.status(200).send(items);
-    // }, 
-
-
-        
-    
-
-
-// update: (req, res) => {
-//     const { item } = req.body;
-//     const updateID = req.query.id;
-//     const cartItems = cart.findIndex( items => items.id == updateID );
-//     let cartItems = cart[cartIndex]
-// },
-
-// delete: ( req, res ) => {
-//     const deleteID = req.query.id;
-
-// }}
 }

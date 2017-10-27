@@ -81,6 +81,8 @@ app.get('/api/gallery', controller.getGallery);
 app.get('/api/prints', controller.getPrints);
 app.get('/api/details/:printid', controller.getDetails);
 
+app.post('/api/order', controller.makeOrder);
+
 // app.get('/api/prints/cart', controller.getCart);
 // app.post('/api/prints/cart', controller.addItem);
 // app.put('/api/prints/cart', controller.update);

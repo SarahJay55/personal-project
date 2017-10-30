@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import axios from 'axios';
 import { setOnePrintOnRedux, addPrintToCart } from './../../../ducks/reducer.js';
 
 class Details extends Component {
@@ -10,10 +9,6 @@ class Details extends Component {
        this.props.setOnePrintOnRedux(printID);
     }
 
-    // addToCart(print) {
-    //     this.props.addPrintToCart(print);
-    // }
-
     render() {
         const print = this.props.print;
 
@@ -22,7 +17,6 @@ class Details extends Component {
                 <img alt='prints' src={print.print_url} />
                 <p>{print.print_name}</p>
                 <p>{print.price}</p>
-                {/* <div className="addToCart" onClick={() => this.addToCart(print)}>Add To Cart</div> */}
             </div>
         )
     }

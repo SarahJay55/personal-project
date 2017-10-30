@@ -15,7 +15,6 @@ const SET_ONE_PRINT_ON_REDUX = "SET_ONE_PRINT_ON_REDUX";
 const ADD_PRINT_TO_CART = "ADD_PRINT_TO_CART";
 const GET_CART = "GET_CART";
 const CHECKOUT = "CHECKOUT";
-
 const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 
 
@@ -44,7 +43,6 @@ export function getGallery() {
 export function getPrints() {
     const printData = axios.get('http://localhost:3005/api/prints')
         .then(res => {
-            console.log(res)
             return res.data
         })
     return {
@@ -109,10 +107,11 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { cart: newCart })
         case GET_CART + '_FULFILLED':
             return Object.assign({}, state, { cart: action.payload })
-        case REMOVE_FROM_CART + '_FULFILLED':
+        case REMOVE_FROM_CART:
+        console.log(action.payload)
             let newArray = state.cart.slice();
-            newArray.splice(action.index, 1);
-            return Object.assign({}, { cart: newArray });
+            newArray.splice(action.payload, 1);
+            return Object.assign({}, state, { cart: newArray });
         case CHECKOUT:
             return Object.assign(initialState);
 

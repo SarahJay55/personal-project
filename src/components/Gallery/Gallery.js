@@ -20,7 +20,6 @@ class Gallery extends Component {
 
     render() {
         const theGallery = this.props.gallery.map((photo, i) => {
-
             return (
                 <div key={i} className="gallerygrid">
                     <ImageZoom image={{
@@ -32,6 +31,7 @@ class Gallery extends Component {
                 </div>
             )
         })
+        
         return (
             <div className="test">
                 <h1 className="galleryheader">Gallery</h1>

@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Cart.css';
 import axios from 'axios';
-import { checkout } from './../../../ducks/reducer.js';
-import { Prints } from './../Prints/Prints.js'
+import { checkout, removeFromCart } from './../../../ducks/reducer.js';
 import StripeCheckout from 'react-stripe-checkout';
 import pub_key from './stripeKey.js';
-// import { addPrintToCart } from './../../../ducks/reducer.js'
-// import { removeFromCart } from './../../../ducks/reducer.js';
-// import { addToCart } from './../../../ducks/reducer.js';
+
 
 class Cart extends Component {
 
@@ -46,6 +43,8 @@ class Cart extends Component {
                 <img alt='photos' src={item.print_url} />
                 <p>{item.print_name}</p>
                 <p>Price - ${item.price}</p>
+                <div className="removeFromCart" onClick={() => this.props.removeFromCart(i)}>Remove</div>
+
               </div>
             )
           })}
@@ -68,4 +67,4 @@ function mapStateToProps(state) {
   return { cart: state.cart };
 }
 
-export default connect(mapStateToProps, { checkout })(Cart);
+export default connect(mapStateToProps, { checkout, removeFromCart })(Cart);

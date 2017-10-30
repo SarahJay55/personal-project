@@ -83,12 +83,6 @@ app.get('/api/details/:printid', controller.getDetails);
 
 app.post('/api/order', controller.makeOrder);
 
-// app.get('/api/prints/cart', controller.getCart);
-// app.post('/api/prints/cart', controller.addItem);
-// app.put('/api/prints/cart', controller.update);
-// app.delete('/api/prints/cart', controller.delete);
-
-
 app.post('/api/payment', function (req, res, next) {
     const amountArray = req.body.amount.toString().split('');
     const pennies = [];

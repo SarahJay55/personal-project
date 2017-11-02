@@ -100,25 +100,25 @@
   }
 
   .removeFromCart {
-    padding: 4px;
+    padding: 3px;
     height: 30px;
     width: 80px;
     font-size: 17px;
-    color: peru;
+    color: darkseagreen;
     border-radius: 5px;
     margin-left: 280px;
     font-weight: bolder;
     transition: 0.4s;
-    opacity: 0.8;
-    border: 2px solid peru;
+    // opacity: 0.8;
+    border: 2px solid darkseagreen;
     background-color: white;
   }
 
   .removeFromCart:hover {
     cursor: pointer;
-    background-color: peru;
+    background-color: darkseagreen;
     color: white;
-    opacity: 0.7;
+    // opacity: 0.7;
     
   }
 

@@ -15,11 +15,11 @@ class Cart extends Component {
     this.props.checkout()
     
     token.card = void 0;
-    axios.post('http://localhost:3005/api/payment', { token, amount: 100 })
+    axios.post('/api/payment', { token, amount: 100 })
         .then(response => {
             this.props.checkout()
             alert("Payment Received")
-            axios.post('http://localhost:3005/api/order', { cart, email })
+            axios.post('/api/order', { cart, email })
         })
 
 }
@@ -32,8 +32,8 @@ class Cart extends Component {
       <div>
         <div className="cart">
           {/* <div className="loginbuttons">
-          <a href='http://localhost:3005/auth'><button>Log In</button></a>
-          <a href='http://localhost:3005/auth/logout'><button>Log Out</button></a>
+          <a href='/auth'><button>Log In</button></a>
+          <a href='/auth/logout'><button>Log Out</button></a>
           
           </div> */}
           {cart.map((item, i) => {

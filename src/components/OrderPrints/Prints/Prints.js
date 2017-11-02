@@ -50,8 +50,8 @@ class Prints extends Component {
                     <Cart className='cartview' />
                 </div>
                 <div>
-                {/* <a href='http://localhost:3005/auth/logout' className="loginbuttons"><button>Log Out</button></a>
-                <a href='http://localhost:3005/auth' className="loginbuttons"><button>Log In</button></a> */}
+                {/* <a href='/auth/logout' className="loginbuttons"><button>Log Out</button></a>
+                <a href='/auth' className="loginbuttons"><button>Log In</button></a> */}
                 </div>
                 <div>
                     {tableOfPrints}

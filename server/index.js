@@ -11,6 +11,8 @@ const express = require('express')
 
 const app = express();
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -50,7 +52,7 @@ passport.use(new Auth0Strategy({
 
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/prints',
+    successRedirect: process.env.LOGIN_REDIRECT,
     failureRedirect: '/auth'
 }))
 
@@ -63,7 +65,7 @@ app.get('/auth/me', (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(302, 'http://localhost:3000/#/');
+    res.redirect(302, process.env.LOGOUT_REDIRECT);
 })
 
 passport.serializeUser(function (id, done) {
@@ -115,6 +117,12 @@ app.post('/api/payment', function (req, res, next) {
         return res.sendStatus(200);
     });
 });
+
+const path = require('path')
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
+
 
 const PORT = 3005;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`))

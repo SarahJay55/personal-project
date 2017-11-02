@@ -30,7 +30,7 @@ export function getUserInfo() {
 }
 
 export function getGallery() {
-    const galleryData = axios.get('http://localhost:3005/api/gallery')
+    const galleryData = axios.get('/api/gallery')
         .then(res => {
             return res.data
         })
@@ -41,7 +41,7 @@ export function getGallery() {
 }
 
 export function getPrints() {
-    const printData = axios.get('http://localhost:3005/api/prints')
+    const printData = axios.get('/api/prints')
         .then(res => {
             return res.data
         })
@@ -52,7 +52,7 @@ export function getPrints() {
 }
 
 export function setOnePrintOnRedux(val) {
-    const printInfo = axios.get(`http://localhost:3005/api/details/${val}`)
+    const printInfo = axios.get(`/api/details/${val}`)
         .then(res => {
             return res.data
         })
